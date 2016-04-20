@@ -1,4 +1,5 @@
 <head>
+    <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
     <style>    
         body {
             background-color:green;
@@ -8,6 +9,7 @@
             height:100px;
             color:red;
             font-size:500%;
+           
         }
         .comment{
             width:150px;
@@ -19,8 +21,6 @@
             height:300px;
             margin: 10 10 10 10;
             border: 2px#660066 dashed;
-            
-            
         }
         .image{
             width:100%;
@@ -50,6 +50,7 @@
             margin-left: 40px;
             height:228px;
             font-size: 350%;
+            
         }
         #commentContainer{
             background-color: #d9d9d9;
@@ -60,21 +61,38 @@
            width:90%;
            height: 90%px;
        }
-       #OcText{
+       #ocText{
            font-size:400%;
            
        }
-       #OcNameLabel{
+       #ocNameLabel{
            font-size: 400%;
        }
        #ocNameContainer{
-           border-bottom: 2px #660066 dashed;
+           border-bottom: 3px #660066 solid;
             
        }
-   
-       
-    
+       #ocTextcontainer{
+           font-size:-webkit-xxx-large;
+       }
+     
     </style>
+    <script>
+        $(document).ready(function(){
+             $("#postBtn").click(function(){
+                 var name = $('#usrName').val();
+                 var message = $('#commentTextArea').val();
+                 
+                 $("#ocNameLabel").text(name);
+                 $("#ocTextContainer").text(message);
+                 
+                 
+               console.log(name);
+               console.log(message);
+            });
+        });
+       
+    </script>
 </head>
 <body>
     <div id="chatroomContainer">
@@ -99,7 +117,7 @@
             <div>
                 <textarea id="commentTextArea" form="usrform"> Enter text here... </textarea>
                
-                <button type="submit" form="form1"value="submit"> Send ></button>
+                <button id="postBtn" type="button" form="form1"value="submit"> Send ></button>
                     
             </div>
         </div>
