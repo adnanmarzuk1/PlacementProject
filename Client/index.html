@@ -1,6 +1,6 @@
 <head>
     <style>
-        .header{
+        #header{
             width:150px;
             height:100px;
             color: blue;
@@ -12,29 +12,49 @@
             width:500px;
             height:500px;
             margin: 0 auto;
+      
         }
-          
+        #usrContainer{
+            height:30px;
+            margin-left:30px;
+            color:yellow;
+        }
+        
         body {
             background-color:green;
         }
-       
+        #comment{
+            width:700;
+            margin-left: 30px;
+            height:100;
+            font-size: 150%;
+        }
+        #commentContainer{
+            color:blue;
+        }
+
     </style>
 </head>
 <body>
-    <div id="headerContainer">
-        <h1 class="header">chatroom </h1>
+    <div id="chatroomContainer">
+        <h1 class="comment">Chatroom </h1>
+        
     </div>
     <div>
         <div id="contentContainer">
         </div>
     </div>
     
-    <div id="headerContainer">
-        <h1 class="header">comments </h1>
-    </div>
-    <form action="demo_form.asp" id="usrform">  
-        <label>  Name: </label> <input type="text"name="usrname">
-        <textarea name="comment" form="usrform">Enter text here...</textarea>
-    </form>
+    <div id="commentContainer">
+        <h1 class="comment">Comments </h1>
+        <div id="usrContainer">
+            <label id="nameLabel">  Name: </label> <input type="text" id="usrName">
+        </div>
+        <div>
+            <textarea id="comment" form="usrform">Enter text here...</textarea>
            
+        </div>
+     
+        
+    </div>
 </body>
