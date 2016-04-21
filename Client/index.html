@@ -10,43 +10,43 @@
             height:100px;
             color:red;
             font-size:500%;
-           margin-bottom: 15px;
+            margin-bottom: 15px;
           
         }
         .comment{
-            width:150px;
-            height:50px;
-            color: blue;
+         width:150px;
+         height:50px;
+         color: blue;
         }
         .otherCommentBox{
-            width:90%;
-            height:300px;
-            margin: 10 10 10 10;
-            border: 2px#660066 dashed;
+         width:90%;
+         height:300px;
+         margin: 10 10 10 10;
+         border: 2px#660066 dashed;
         }
         .image{
-          width:100%;
-          height:100%;           border:2px greenyellow solid;
-           
+         width:100%;
+         border:2px greenyellow solid;           
+         height:100%;
         }
         .ocText{
-          font-size:400%;
+         font-size:400%;
            
         }
-       .ocNameLabel{
-          font-size: 400%;
+        .ocNameLabel{
+         font-size: 400%;
         }
-       .ocNameContainer{
-          border-bottom: 3px #660066 solid;
+        .ocNameContainer{
+         border-bottom: 3px #660066 solid;
             
         }
-       .ocTextcontainer{
-          font-size:-webkit-xxx-large;
+        .ocTextcontainer{
+         font-size:-webkit-xxx-large;
         }
         .contentContainer{
-          width:750px;
-          height:500px;
-          margin: 0 auto;
+         width:750px;
+         height:500px;
+         margin: 0 auto;
         }
          .searchContainer{
           width:750px;
@@ -58,7 +58,7 @@
           display:block;
        
         }
-          #usrContainer{
+        #usrContainer{
           height:30px;
           margin-left:30px;
           color:brown;
@@ -75,56 +75,111 @@
          #commentContainer{
           background-color: #d9d9d9;
         }
-          #otherComments{
+         #otherComments{
           border: 1px black solid;
           margin: 10 10 10 10;
           width:90%;
           height: 90%px;
         }
-        form{
-            width:500px;
-            margin:50px auto;
-            
-        }    
-         .search{
-             padding: 8px 15px;
-             background: rgba (50, 50, 0.2);
-             border: 0px solid #dbddbd;
+         #searchBox{
+             background-color: #eaf8fc;
+             background-image: linear-gradient(#fff,#d4e8ec);
+             border-radius:35px;
+             border-width:1px;
+             border-style: solid;
+             border-color: #c4d9df #a4c3ca #83afb7;
+             width: 500px;
+             height: 35px;
+             padding: 35px;
+             margin: 100px auto 50px;
+             overflow: hidden;
          }
-             .button {
-                 position: relative;
-                 padding:6px 15px;
-                 left:-8px;
-                 border:2px solid #207cca;
-                 background-color:#207cca;
-                 color:#fafafa;
-             }
-             .button:hover {
-                 background-color:#fafafa;
-                 color:#207cca;
-                 
-             }
-       
+         #submit{
+             float: left;
+         }
+         #search{
+             float:left;
+             padding: 5px 9px;
+             height: 35px;
+             width: 380px;
+             border: 1px solid #a4c3ca;
+             font: normal 13 px 'trebuchet MS' arial, helvetica;
+             background: #f1f1f1;
+             border-radius: 50px 3px 3px 50px;
+             box-shadow: 0 1px 3px rgba(0,0,0,0.25) inset, 0 1px 0 rgba(255, 255);
+         }
+         #submit{
+             background-color: #6cbb6b;
+             background-image: linear-gradient(#95d788, #6cbb6b);
+             border-radius: 3px 50px 50px 3px;
+             border-width: 1px;
+             border-style: solid;
+             border-color: #7eba7c #578e57 #447d43;
+             box-shadow: 0 0 1px rgba(0, 0, 0, 0.3),
+             0 1px 0 rgba(255, 255, 255, 0.3) inset;
+             height:35px;
+             margin: 0 0 0 10px;
+             padding: 0;
+             width: 90px;
+             cursor: pointer;
+             font: biold 14px Arial, helvetica;
+             color: #23441e;
+             text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+        
+         }
+         #submit:hover{
+             background-color: #95d788;
+             background-image: linear-gradient(#6cbb6b, #95d788);
+             
+         }
+         #submit:hover{
+             background: #95d788;
+             outline: none;
+             box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+         }
+         #submit::-moz-focus-inner{
+             border: 0;
+         }
+         #search::-webkit-input-placeholder {
+             color: #9c9c9c;
+             font-style: italic;
+         }
+         #search:-moz-placeholder{
+             color: #9c9c9c;
+             font-style: italic;
+             
+         }
+         #search:-ms-placeholder{
+             color: #9c9c9c;
+             font-style: italic;
+         }
+         #search.placeholder{
+             color: #9c9c9c;
+             font-style: italic;
+         }
+         
+     
     </style>
     <script>
-        $(document).ready(function(){
+        $(document).ready(function(){            
              $("#postBtn").click(function(){
                  var name = $('#usrName').val();
                  var message = $('#commentTextArea').val();
-                 
-                 //$(".ocNameLabel").text(name);
-                 //$(".ocTextContainer").text(message);
-                 
-                
                 $('#otherComments').prepend('<div class="otherCommentBox"><div class="ocNameContainer"><label class="ocNameLabel">' + name + '</label></div><div class="ocTextContainer"><div class="ocText">' + message + '</div></div></div>');
-
-                
-               
-                  
                 $('#usrName').val('');
                 $('#commentTextArea').val('');
             });
+            
+            
         }); 
+        function searchImg(){
+            var searchTerm = $('#search').val();
+            var webURL = 'http://loremflickr.com/750/500/';
+            var newURL =  webURL + searchTerm ;
+            console.log(newURL);
+            
+            $('#imgElement').attr('src', newURL);
+        }
       
     </script>
 </head>
@@ -134,15 +189,13 @@
         
     </div>
     <div>
-        <form> 
-        <input type="text" placeholder="Search..." required>
-        <input type="button" value="Search">
-        </form>
-            
-                                
-        </div>
+      <form id="searchBox" action="javascript:searchImg();">
+          <input id="search" type="text" placeholder="Type here">
+          <input id="submit" type="submit" value="Search">
+        </form>       
+    </div>
         <div class="contentContainer">
-            <img src="http://cdn.boldride.com/bugatti/2017/bugatti-chiron.2000x1334.Feb-29-2016_08.43.17.968565.jpg" id="imgElement" class="image">
+           <img src="http://loremflickr.com/750/500/" id="imgElement" class="image">
            
         </div>
     </div>
@@ -156,7 +209,7 @@
                 <label id="nameLabel">  Username: </label> <input type="text" id="usrName">
             </div>
             <div>
-                <textarea id="commentTextArea" form="usrform"> Enter text here... </textarea>
+                <textarea id="commentTextArea" form="usrform" placeholder="Enter text here..."></textarea>
                
                 <button id="postBtn" type="button" form="form1"value="submit"> Send ></button>
                     
