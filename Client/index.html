@@ -26,7 +26,20 @@
             width:100%;
             height:100%;
         }
-        
+        .ocText{
+           font-size:400%;
+           
+        }
+       .ocNameLabel{
+           font-size: 400%;
+       }
+       .ocNameContainer{
+           border-bottom: 3px #660066 solid;
+            
+       }
+       .ocTextcontainer{
+           font-size:-webkit-xxx-large;
+       }
         
         #headerContainer{
             display:block;
@@ -50,7 +63,6 @@
             margin-left: 40px;
             height:228px;
             font-size: 350%;
-            
         }
         #commentContainer{
             background-color: #d9d9d9;
@@ -61,20 +73,7 @@
            width:90%;
            height: 90%px;
        }
-       #ocText{
-           font-size:400%;
-           
-       }
-       #ocNameLabel{
-           font-size: 400%;
-       }
-       #ocNameContainer{
-           border-bottom: 3px #660066 solid;
-            
-       }
-       #ocTextcontainer{
-           font-size:-webkit-xxx-large;
-       }
+       
      
     </style>
     <script>
@@ -83,15 +82,20 @@
                  var name = $('#usrName').val();
                  var message = $('#commentTextArea').val();
                  
-                 $("#ocNameLabel").text(name);
-                 $("#ocTextContainer").text(message);
+                 //$(".ocNameLabel").text(name);
+                 //$(".ocTextContainer").text(message);
                  
-                 
-               console.log(name);
-               console.log(message);
+                
+                $('#otherComments').prepend('<div class="otherCommentBox"><div class="ocNameContainer"><label class="ocNameLabel">' + name + '</label></div><div class="ocTextContainer"><div class="ocText">' + message + '</div></div></div>');
+
+                
+               
+                  
+                $('#usrName').val('');
+                $('#commentTextArea').val('');
             });
-        });
-       
+        }); 
+      
     </script>
 </head>
 <body>
@@ -122,14 +126,11 @@
             </div>
         </div>
         <div id="otherComments">
-            <div class="otherCommentBox">
-                <div id="ocNameContainer">
-                    <label id="ocNameLabel">UnitedFan4_life</label>
-                </div>
-                <div id="ocTextContainer">
-                    <div id="ocText">Great team</div>
-                </div>  
-            </div>
+            
+            
+           
+            
+            
        </div>
     </div>
 </body>
